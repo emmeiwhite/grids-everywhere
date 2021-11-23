@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* rows */
+  /* grid-auto-rows: 200px; */
+  /* grid-auto-rows: minmax(200px, auto); */
+  /* grid-auto-rows: repeat(3, minmax(200px, auto)); */
+  grid-template-rows: repeat(8, minmax(200px, auto));
+}
+
+.item {
+  background-color: blue;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.item:nth-child(even) {
+  background-color: rgb(236, 113, 42);
+}
