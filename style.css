@@ -12,26 +12,45 @@
 }
 
 
-.container > div:nth-child(1n) {
-  background-color: #96ceb4;	
-}
-
-.container > div:nth-child(3n) {
-  background-color: #88d8b0;
-}
-
-.container > div:nth-child(2n) {
-  background-color: #ff6f69;
-}
-
-.container > div:nth-child(4n) {
-  background-color: #ffcc5c;
-}
 
 
 /* Applying CSS-Grid for Grid Layouts */
 
 .container{
+    height: 100vh;
+    width: 90vw;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 3rem auto 3rem;
+    grid-template-areas: 
+    'm h h h h h h h h h h h'
+    'm c c c c c c c c c c c'
+    'm f f f f f f f f f f f';
+}
+
+.header{
+    grid-area: h;
+    background-color: #96ceb4;
+}
+
+.menu{
+    grid-area: m;
+    background-color:#ff6f69;
+}
+
+.content{
+    grid-area: c;
+    background-color: olivedrab;
+}
+
+.footer{
+    grid-area: f;
+    background-color: palegreen;
+}
+
+@media(max-width:768px){
+    .container{
+        width:100vw;
+    }
 }
